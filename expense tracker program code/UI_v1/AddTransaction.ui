@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>window_addTransaction</class>
+ <widget class="QDialog" name="window_addTransaction">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>759</width>
+    <height>458</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(187, 189, 229);
+border-color: rgb(12, 12, 12);</string>
+  </property>
+  <widget class="QComboBox" name="cbo_userHousehold">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>120</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radio_personal">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>70</y>
+     <width>101</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Personal</string>
+   </property>
+   <attribute name="buttonGroup">
+    <string notr="true">btn_groupType</string>
+   </attribute>
+  </widget>
+  <widget class="QRadioButton" name="radio_combined">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>70</y>
+     <width>171</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Combined/Household</string>
+   </property>
+   <attribute name="buttonGroup">
+    <string notr="true">btn_groupType</string>
+   </attribute>
+  </widget>
+  <widget class="QCommandLinkButton" name="cmd_upload">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>370</y>
+     <width>271</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Upload Transaction to Database</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>251</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>What type of transaction is being added? *</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>221</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Name of user / household *</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="date_expense">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>170</y>
+     <width>110</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>170</y>
+     <width>221</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Date of Transaction *</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>220</y>
+     <width>271</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter either a sentence or keywords to describe the transaction. The words that are selected in this description are ultimately used to classify the transactions, so select words accordingly.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Ex. amazon purchase, loblaws groceries, esso gas, etc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="text">
+    <string>Statement Description (hover for more info) *</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>270</y>
+     <width>221</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Amount (CDN) *</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txt_amount">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>270</y>
+     <width>113</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radio_expense">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>268</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Expense</string>
+   </property>
+   <attribute name="buttonGroup">
+    <string notr="true">btn_groupAmount</string>
+   </attribute>
+  </widget>
+  <widget class="QRadioButton" name="radio_income">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>287</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Income</string>
+   </property>
+   <attribute name="buttonGroup">
+    <string notr="true">btn_groupAmount</string>
+   </attribute>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>320</y>
+     <width>251</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter either a sentence or keywords to describe the the type of transaction. This may be used to describe bill payments, rent/mortgage payments, condo fees, etc. &lt;/p&gt;&lt;p&gt;Default is to leave this field blank for credit card transactions&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="text">
+    <string>Transaction Type (hover for more info)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>731</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600;&quot;&gt;Enter single expenses/revenue transactions by filling out the form below and uploading to database once complete&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txt_statement">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>220</y>
+     <width>351</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txt_type">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>320</y>
+     <width>351</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="btn_groupAmount"/>
+  <buttongroup name="btn_groupType"/>
+ </buttongroups>
+</ui>

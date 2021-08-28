@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>window_addTransactionS</class>
+ <widget class="QDialog" name="window_addTransactionS">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1278</width>
+    <height>645</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(187, 189, 229);
+border-color: rgb(12, 12, 12);</string>
+  </property>
+  <widget class="QPushButton" name="push_uploadCSV">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>300</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(167, 176, 168);</string>
+   </property>
+   <property name="text">
+    <string>Select a csv file to upload it to the application</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cbo_userHousehold">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>70</y>
+     <width>200</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radio_personal">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>141</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Personal Expenses</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radio_combined">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>70</y>
+     <width>171</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Combined Expenses</string>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="cmd_upload">
+   <property name="geometry">
+    <rect>
+     <x>604</x>
+     <y>63</y>
+     <width>321</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Upload Expenses to Database</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="table_file">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>160</y>
+     <width>1251</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_uploadCSV">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>20</y>
+     <width>761</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>the .csv file for import must: 1) Be in column order: Date, Description, Amount, Type (optional). 2) Not have any headers</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
