@@ -9,6 +9,4 @@ In the back-end, the program utilizes pandas for data grouping and analysis. In 
 Additional utilities that are provided include the ability to add more accounts/users, add/delete expense categories.
 This program will create a folder directory in your computer’s desktop directory, and will store databases, plots, queries and other files required to operate the program.
 
-A list of dependencies in the conda development environment is included in the repository. Furthermore, for those who may not wish to use python interpreter to use the application, a standalone executable (built using CXFreeze 6.6) is available for download (the file size is large!). 
-
-To use the standalone executable, download the zip folder titled "build.zip", extract the contents and open "DM_expense_tracker_v1.0.exe" to initiate the program. The program may take more than 30 seconds to load given the large file size and file dependencies required to run the standalone executable (all nested in the "lib" subfolder").
+A list of dependencies in the conda development environment is included in the repository. To access the main program from the python interpreter of your choice, open and run the file titled "DM_expense_tracker_v1.0". No other .py files should be required to open/run to use the program as intended. Furthermore, for those who may not wish to use python interpreter to use the application, a standalone executable (built using CXFreeze 6.6) is available upon request (the file size is too large for upload to the repository).
