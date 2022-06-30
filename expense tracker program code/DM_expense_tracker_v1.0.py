@@ -319,7 +319,7 @@ class request_db():
         user_list = []
         if sql_override == True:
             if sql_var != None:
-                for row in self.c.execute(sql_statement, sql_var):
+                for row in self.c.execute(sql_statement, (sql_var,)):
                     user_list.append(row)
             else:
                 for row in self.c.execute(sql_statement):
@@ -334,7 +334,8 @@ class request_db():
         df.drop('Name', axis=1, inplace=True)
         
         return df
-    
+
+
     
     def get_statements(self, category):
         '''
@@ -452,7 +453,7 @@ class request_db():
         self.conn.commit()
         self.conn.close()
         
-    def delete_statement(self, table_name, statement_name):
+    def delete_statement(self, table_name, statement_name, sql_override = False, sql_statement = None, sql_var = None):
         '''
         
         Remove all entries in a database based on statement name
@@ -473,14 +474,30 @@ class request_db():
         self.conn = sqlite3.connect(self.db_filename)
         self.c = self.conn.cursor()
         
+        if sql_override != False:
+            self.c.execute(sql_statement, (sql_var,))
+        
+        else:
         #Below is not ideal as it opens to "injection attacks"
-        self.c.execute('DELETE FROM {} WHERE Statement = ?'.format(table_name), (statement_name,))
+            self.c.execute('DELETE FROM {} WHERE Statement = ?'.format(table_name), (statement_name,))
         
         self.conn.commit()
         self.conn.close()
         
-'''Setting up GUI windows'''
 
+
+if 1 == 0: #troubleshooting faulty database entries
+    test = request_db(r"C:\Users\dmazerol\Desktop\DM_Expense_Tracker\Statements\dillon_statements_.db")
+    sql_statement = "SELECT * FROM statements WHERE Description=?"
+    # breakpoint()
+    temp = test.get_transactions(user_var = None, sql_override=True, sql_statement = sql_statement, sql_var = '')
+    
+    breakpoint()
+    sql_statement = 'DELETE FROM statements WHERE Description=?'
+    test.delete_statement('', '', True, sql_statement, '')
+
+
+'''Setting up GUI windows'''
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super().__init__(parent)
